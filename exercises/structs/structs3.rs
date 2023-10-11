@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-11 21:53:46
+ * @LastEditTime: 2023-10-11 21:58:54
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\structs\structs3.rs
+ */
 // structs3.rs
 //
 // Structs contain data, but can also have logic. In this exercise we have
@@ -6,8 +13,7 @@
 //
 // Execute `rustlings hint structs3` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
+ 
 
 #[derive(Debug)]
 struct Package {
@@ -29,12 +35,19 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
+    fn is_international(&self) -> bool {
         // Something goes here...
+        if self.sender_country == self.recipient_country{
+            false
+        }
+        else{
+            true
+        }
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> ??? {
+    fn get_fees(&self, cents_per_gram: i32) -> i32 {
         // Something goes here...
+        self.weight_in_grams * cents_per_gram
     }
 }
 

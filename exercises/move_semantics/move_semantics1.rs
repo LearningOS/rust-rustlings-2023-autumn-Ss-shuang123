@@ -1,14 +1,20 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-11 21:37:20
+ * @LastEditTime: 2023-10-11 21:39:37
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\move_semantics\move_semantics1.rs
+ */
 // move_semantics1.rs
 //
 // Execute `rustlings hint move_semantics1` or use the `hint` watch subcommand
 // for a hint.
-
-// I AM NOT DONE
+ 
 
 fn main() {
     let vec0 = Vec::new();
 
-    let vec1 = fill_vec(vec0);
+    let mut vec1 = fill_vec(vec0.clone());
 
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 

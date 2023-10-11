@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-11 21:41:25
+ * @LastEditTime: 2023-10-11 21:42:44
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\move_semantics\move_semantics3.rs
+ */
 // move_semantics3.rs
 //
 // Make me compile without adding new lines-- just changing existing lines! (no
@@ -5,11 +12,10 @@
 //
 // Execute `rustlings hint move_semantics3` or use the `hint` watch subcommand
 // for a hint.
-
-// I AM NOT DONE
+ 
 
 fn main() {
-    let vec0 = Vec::new();
+    let vec0:Vec<i32> = Vec::new();
 
     let mut vec1 = fill_vec(vec0);
 
@@ -20,7 +26,7 @@ fn main() {
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
 }
 
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
     vec.push(22);
     vec.push(44);
     vec.push(66);

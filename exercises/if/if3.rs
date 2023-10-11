@@ -1,18 +1,24 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-11 17:48:27
+ * @LastEditTime: 2023-10-11 17:48:27
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\if\if3.rs
+ */
 // if3.rs
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
         1
     } else if animal == "gopher" {
-        2.0
+        2
     } else if animal == "snake" {
         3
     } else {
-        "Unknown"
+        0
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW

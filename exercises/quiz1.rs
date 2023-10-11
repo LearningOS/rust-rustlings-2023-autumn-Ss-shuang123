@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-11 17:50:11
+ * @LastEditTime: 2023-10-11 17:55:41
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\quiz1.rs
+ */
 // quiz1.rs
 //
 // This is a quiz for the following sections:
@@ -13,11 +20,14 @@
 //
 // No hints this time ;)
 
-// I AM NOT DONE
-
 // Put your function here!
-// fn calculate_price_of_apples {
-
+fn calculate_price_of_apples(c:i32) -> i32 {
+    if c > 40{
+        c
+    }else{
+        c * 2
+    }
+}
 // Don't modify this function!
 #[test]
 fn verify_test() {
@@ -31,3 +41,6 @@ fn verify_test() {
     assert_eq!(41, price3);
     assert_eq!(65, price4);
 }
+
+
+

@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-11 21:44:29
+ * @LastEditTime: 2023-10-11 21:44:29
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\move_semantics\move_semantics4.rs
+ */
 // move_semantics4.rs
 //
 // Refactor this code so that instead of passing `vec0` into the `fill_vec`
@@ -7,7 +14,6 @@
 // Execute `rustlings hint move_semantics4` or use the `hint` watch subcommand
 // for a hint.
 
-// I AM NOT DONE
 
 fn main() {
     let vec0 = Vec::new();
@@ -22,7 +28,7 @@ fn main() {
 }
 
 // `fill_vec()` no longer takes `vec: Vec<i32>` as argument
-fn fill_vec() -> Vec<i32> {
+fn fill_vec(mut vec:Vec<i32>) -> Vec<i32> {
     let mut vec = vec;
 
     vec.push(22);
