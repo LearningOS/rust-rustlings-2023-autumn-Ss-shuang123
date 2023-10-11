@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-10 21:37:53
+ * @LastEditTime: 2023-10-10 21:39:06
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\if\if2.rs
+ */
 // if2.rs
 //
 // Step 1: Make me compile!
@@ -5,13 +12,17 @@
 //
 // Execute `rustlings hint if2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+
 
 pub fn foo_if_fizz(fizzish: &str) -> &str {
     if fizzish == "fizz" {
         "foo"
-    } else {
-        1
+    } else if fizzish == "fuzz" {
+        "bar"
+    }
+    else
+    {
+        "baz"
     }
 }
 

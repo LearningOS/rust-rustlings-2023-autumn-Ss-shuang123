@@ -1,14 +1,25 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-10 21:36:49
+ * @LastEditTime: 2023-10-10 21:36:49
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\if\if1.rs
+ */
 // if1.rs
 //
 // Execute `rustlings hint if1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 
 pub fn bigger(a: i32, b: i32) -> i32 {
     // Complete this function to return the bigger number!
     // Do not use:
     // - another function call
     // - additional variables
+    if a>b{
+        a
+    }else{
+        b
+    }
 }
 
 // Don't mind this for now :)

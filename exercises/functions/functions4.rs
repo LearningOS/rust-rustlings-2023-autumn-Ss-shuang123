@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-10 21:35:12
+ * @LastEditTime: 2023-10-10 21:35:12
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\functions\functions4.rs
+ */
 // functions4.rs
 //
 // This store is having a sale where if the price is an even number, you get 10
@@ -8,14 +15,13 @@
 // Execute `rustlings hint functions4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 fn main() {
     let original_price = 51;
     println!("Your sale price is {}", sale_price(original_price));
 }
 
-fn sale_price(price: i32) -> {
+fn sale_price(price: i32) -> i32{
     if is_even(price) {
         price - 10
     } else {
