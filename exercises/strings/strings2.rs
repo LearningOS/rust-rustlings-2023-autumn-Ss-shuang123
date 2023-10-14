@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-12 13:16:20
+ * @LastEditTime: 2023-10-12 13:16:20
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\strings\strings2.rs
+ */
 // strings2.rs
 //
 // Make me compile without changing the function signature!
@@ -5,11 +12,10 @@
 // Execute `rustlings hint strings2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 fn main() {
     let word = String::from("green"); // Try not changing this line :)
-    if is_a_color_word(word) {
+    if is_a_color_word(&word) {
         println!("That is a color word I know!");
     } else {
         println!("That is not a color word I know.");

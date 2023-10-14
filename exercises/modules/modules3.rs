@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-13 20:14:03
+ * @LastEditTime: 2023-10-13 21:05:00
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\modules\modules3.rs
+ */
 // modules3.rs
 //
 // You can use the 'use' keyword to bring module paths from modules from
@@ -7,11 +14,10 @@
 //
 // Execute `rustlings hint modules3` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
+ 
 
 // TODO: Complete this use statement
-use ???
+use std::time::{SystemTime, UNIX_EPOCH}; // 添加导入UNIX_EPOCH
 
 fn main() {
     match SystemTime::now().duration_since(UNIX_EPOCH) {

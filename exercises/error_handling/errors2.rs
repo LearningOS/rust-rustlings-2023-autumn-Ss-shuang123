@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-14 17:26:43
+ * @LastEditTime: 2023-10-14 17:32:05
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\error_handling\errors2.rs
+ */
 // errors2.rs
 //
 // Say we're writing a game where you can buy items with tokens. All items cost
@@ -18,17 +25,17 @@
 //
 // Execute `rustlings hint errors2` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
+ 
 
 use std::num::ParseIntError;
 
 pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let processing_fee = 1;
     let cost_per_item = 5;
-    let qty = item_quantity.parse::<i32>();
+    let qty = item_quantity.parse::<i32>()?;
 
     Ok(qty * cost_per_item + processing_fee)
+
 }
 
 #[cfg(test)]
@@ -39,6 +46,8 @@ mod tests {
     fn item_quantity_is_a_valid_number() {
         assert_eq!(total_cost("34"), Ok(171));
     }
+
+
 
     #[test]
     fn item_quantity_is_an_invalid_number() {

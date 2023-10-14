@@ -1,7 +1,7 @@
 <!--
  * @Author: ss
  * @Date: 2023-10-10 19:12:24
- * @LastEditTime: 2023-10-11 21:31:26
+ * @LastEditTime: 2023-10-14 17:45:05
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\records.md
 -->
@@ -19,6 +19,12 @@ println!("{}, world!", s1); //error
 ```
 结构体复用：\
 ..struct_name \
+
+字符串字面值(字符切片)： \
+不可变 \
+& 一般是切片 \
+.trim() 默认切片 \
++后面是切片
 
 数组切片： \
 ```rust
@@ -47,6 +53,14 @@ let s = "hello";
 ```
 栈：\
 函数局部变量、指向堆上的指针、函数参数、函数返回值 
+
+关联函数: \
+类似于构造函数
+```rust
+    fn new(name: String, age: u32) -> Person {
+        Person { name, age }
+    }
+```
 
 # 2023-10-10 
 本地vscode使用rustlings出现点问题，不能直接按照readme里面安装方式 \
@@ -213,7 +227,7 @@ struct Point<T> {
     x: T,
     y: T,
 }
-impl<T> Point<T{
+impl<T> Point<T>{
     fn x(&self)->&T{
         &self.x
     }
@@ -236,4 +250,191 @@ fn main() {
 }
 ```
 
+# 2023-10-12
+泛型Trait： \
+trait是一种类型，用于将方法签名组合起来的方法集合。\
+能方法重载 \
+如果你想要为类型 A 实现特征 T，那么 A 或者 T 至少有一个是在当前作用域中定义的！如果你要使用一个特征的方法，那么你需要将该特征引入当前的作用域中\
+```rust
 
+// trait 相当于是声明一些方法
+pub trait Summary { //pub：公开
+    fn summarize(&self) -> String;
+}
+
+pub struct  Post{
+    pub title: String,
+    pub author: String,
+    pub content: String
+}
+impl Summary for Post { // for 指向
+    fn summarize(&self) -> String {
+        format!("文章{}, 作者{}", self.title, self.author)
+    }
+}
+
+fn main(){
+    let post = Post{
+        title:"你好".to_string(),
+        author:"ss".to_string(),
+        content:"ss".to_string()
+    };
+    println!("{}",post.summarize());
+}
+```
+
+```rust
+//特征约束
+fn notify(item: &impl Summary) {
+    println!("Breaking news! {}", item.summarize());
+}
+//等价于
+fn notify<T:Summary>(item:&T){
+    println!("Breaking news! {}", item.summarize());
+}
+
+//多个特征约束
+fn notify(item:&impl Summary+Other){}
+fn notify<T:Summary+Other>(item:&T){}
+
+//where约束
+fn notify<T,U>(t:&T,u:&U)
+where T:Summary+Other,
+       U:Summary+Other
+{
+    //...
+}
+
+```
+类似于重载特征
+```rust
+use std::ops::Add;
+
+#[derive(Debug)]
+struct Point<T:Add<T,Output = T>>{
+    x:T,
+    y:T
+}
+
+impl <T:Add<T,Output = T>> Add for Point<T> {
+    type Output = Point<T>;
+    fn add(self, p:Point<T>) -> Point<T> {
+        Point{
+            x: self.x + p.x,
+            y: self.y + p.y
+        }
+    }
+}
+
+fn add<T:Add<T, Output = T>>(a:T, b:T) -> T{
+    a + b
+}
+fn main() {
+    let p1 = Point{x: 1.1f32, y: 1.1f32};
+    let p2 = Point{x: 2.1f32, y: 2.1f32};
+    println!("{:?}", add(p1, p2));
+
+    let p3 = Point{x: 1i32, y: 1i32};
+    let p4 = Point{x: 2i32, y: 2i32};
+    println!("{:?}", add(p3, p4));
+}
+```
+Copy特征：\
+任何基本类型的组合可以Copy, \
+还有不可变引用&T
+
+derive特征：\
+#[derive(Debug)] 
+
+特征对象：\
+解决对象类型不同，但需要一个统一类型来处理 \
+Box<dyn _> 任何实现_特征的类型都可以放其中 \
+
+特征对象限制: \
+使用特征对象时，Rust 必须使用动态分发 \
+特征的所有方法满足以下条件 
+1. 方法的返回类型不能是Self
+2. 方法没有任何泛型参数
+
+Vector: \
+读取元素：\
+```rust
+&v[2];
+v.get(2); //Option类型
+```
+
+HashMap: \
+```rust
+use std::collections::HashMap; //需要导入
+let mut map = HashMap::new(); //创建
+map.insert("a", 1); //插入
+map.get("a"); //获取 返回Option
+map.remove("a"); //删除
+map.entry("a").or_insert(1); //是否有 无则插入 返回&mut
+```
+生命周期: \
+指定引用的有效范围 \
+引用的生命周期必须小于等于变量的生命周期 \
+生命周期语法标注 函数名加上<'a> 变量名后面通常加上:&'a \
+返回值等于参数中生命周期最短的那个 \
+'a: 'b，是生命周期约束语法，表示'a的生命周期必须大于等于'b的生命周期 \
+&'static 生命周期整个程序活得一样久
+
+生命周期消除：\
+返回值是一个引用,必定是一个参数的引用 \
+所有可以省略标注
+
+生命周期规则：\
+1. 每一个引用都有其生命周期
+2. 只有一个输入生命周期参数，那么它被赋予所有输出生命周期参数
+3. 如果有多个输入生命周期参数，但其中一个是&self或&mut self，那么self的生命周期被赋予所有输出生命周期参数
+
+
+# 2023-10-13
+Crate包：\
+独立的可编译单元 \
+Package项目：\
+一个库Package、二进制Packge(一般可单独运行) \
+Package 是一个项目工程，而Crate包只是一个编译单元 \
+
+mod模块：
+pub关键字可见 默认情况下，所有的类型都是私有化的，包括函数、方法、结构体、枚举、常量，\ 
+就连模块本身也是私有化的 父模块完全无法访问子模块中的私有项，\ 
+但是子模块却可以访问父模块、父父..模块的私有项\
+super: 父模块开始的引用 \
+crate：包根 \
+self：自身模块
+
+use: \
+与python类似 {}代替from import\
+有as重命名 \
+修改Cargo.toml：   \
+在[dependencies] 区域添加：rand 
+
+panic: \
+不可恢复错误 \
+俩种终止流程：栈展开和直接终止 \
+Result类型.parse().unwrap() ： 解析成功 返回Ok，失败panic \
+
+
+?操作符 \
+传播错误 \
+```rust
+f.read_to_string(&mut s)?;
+
+//等价于
+let mut f = match f {
+    // 打开文件成功，将file句柄赋值给f
+    Ok(file) => file,
+    // 打开文件失败，将错误返回(向上传播)
+    Err(e) => return Err(e),
+};
+```
+
+还能自动进行类型提升（转换） \
+链式传播 \
+处理错误值能返回，正确不能直接返回 \
+
+
+# 2023-10-14
+继续做题，相当于是复习的过程 \
