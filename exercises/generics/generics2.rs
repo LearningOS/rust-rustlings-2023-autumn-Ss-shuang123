@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-15 17:31:34
+ * @LastEditTime: 2023-10-15 17:31:34
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\generics\generics2.rs
+ */
 // generics2.rs
 //
 // This powerful wrapper provides the ability to store a positive integer value.
@@ -5,15 +12,14 @@
 //
 // Execute `rustlings hint generics2` or use the `hint` watch subcommand for a
 // hint.
+ 
 
-// I AM NOT DONE
-
-struct Wrapper {
-    value: u32,
+struct Wrapper<T> {
+    value: T,
 }
 
-impl Wrapper {
-    pub fn new(value: u32) -> Self {
+impl<T> Wrapper<T> {
+    pub fn new(value: T) -> Self {
         Wrapper { value }
     }
 }

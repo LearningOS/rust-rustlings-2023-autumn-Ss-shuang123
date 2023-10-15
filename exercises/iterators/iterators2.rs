@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-15 20:09:49
+ * @LastEditTime: 2023-10-15 20:31:13
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\iterators\iterators2.rs
+ */
 // iterators2.rs
 //
 // In this exercise, you'll learn some of the unique advantages that iterators
@@ -15,8 +22,9 @@ pub fn capitalize_first(input: &str) -> String {
     let mut c = input.chars();
     match c.next() {
         None => String::new(),
-        Some(first) => ???,
+        Some(first) => first.to_uppercase().to_string() + c.as_str(),
     }
+ 
 }
 
 // Step 2.
@@ -24,7 +32,12 @@ pub fn capitalize_first(input: &str) -> String {
 // Return a vector of strings.
 // ["hello", "world"] -> ["Hello", "World"]
 pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
-    vec![]
+    let mut v: Vec<String> = Vec::new();
+    for item in words{
+        
+    }
+    v
+    
 }
 
 // Step 3.

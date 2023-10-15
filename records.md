@@ -1,7 +1,7 @@
 <!--
  * @Author: ss
  * @Date: 2023-10-10 19:12:24
- * @LastEditTime: 2023-10-14 17:45:05
+ * @LastEditTime: 2023-10-15 20:33:08
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\records.md
 -->
@@ -438,3 +438,22 @@ let mut f = match f {
 
 # 2023-10-14
 继续做题，相当于是复习的过程 \
+
+# 2023-10-15
+注释分为三个主要类型：代码注释、文档注释、包和模块注释 \
+代码注释：// /* */ \
+文档注释：/// /** */ 可利用cargo doc \
+包和模块注释：//! #![crate_type = "lib"] \
+
+格式化输出：\
+常用println!标准输出和format!格式化文本 \
+eprintln!标准错误输出 \
+```rust
+println!("hello,{}", "world");
+println!("{value}", value=4);      // => "4" 带名称的参数必须放在不带名称参数的后面
+format!("{:?}", (3, 4));          // => "(3, 4)"
+```
+[:#?] [:?] 用于输出无直接Display特征 \
+格式化参数：5填充 <>^对齐 .精度 #进制 eE指数 \
+
+目前基本上过完基础篇了； \

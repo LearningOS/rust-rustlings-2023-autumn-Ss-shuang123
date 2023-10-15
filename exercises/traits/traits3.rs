@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-15 17:49:03
+ * @LastEditTime: 2023-10-15 17:49:03
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\traits\traits3.rs
+ */
 // traits3.rs
 //
 // Your task is to implement the Licensed trait for both structures and have
@@ -7,15 +14,18 @@
 //
 // Execute `rustlings hint traits3` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
+ 
 
 pub trait Licensed {
-    fn licensing_info(&self) -> String;
+    fn licensing_info(&self) -> String
+    {
+        "Some information".to_string()
+    }
 }
 
 struct SomeSoftware {
     version_number: i32,
+
 }
 
 struct OtherSoftware {

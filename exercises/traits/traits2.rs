@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-15 17:39:34
+ * @LastEditTime: 2023-10-15 17:46:29
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\traits\traits2.rs
+ */
 // traits2.rs
 //
 // Your task is to implement the trait `AppendBar` for a vector of strings. To
@@ -7,14 +14,21 @@
 // No boiler plate code this time, you can do this!
 //
 // Execute `rustlings hint traits2` or use the `hint` watch subcommand for a hint.
-
-// I AM NOT DONE
+ 
 
 trait AppendBar {
     fn append_bar(self) -> Self;
 }
 
 // TODO: Implement trait `AppendBar` for a vector of strings.
+impl AppendBar for Vec<String>{
+    fn append_bar(self) -> Vec<String>{
+        let mut v = self;
+        v.push("Bar".to_string());
+        v
+    }
+}
+
 
 #[cfg(test)]
 mod tests {

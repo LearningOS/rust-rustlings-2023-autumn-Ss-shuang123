@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-15 19:50:30
+ * @LastEditTime: 2023-10-15 19:50:30
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\tests\tests1.rs
+ */
 // tests1.rs
 //
 // Tests are important to ensure that your code does what you think it should
@@ -9,13 +16,12 @@
 //
 // Execute `rustlings hint tests1` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
+ 
 
 #[cfg(test)]
 mod tests {
     #[test]
     fn you_can_assert() {
-        assert!();
+        assert!(1==1);
     }
 }
