@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-18 21:29:37
+ * @LastEditTime: 2023-10-18 21:32:32
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\threads\threads2.rs
+ */
 // threads2.rs
 //
 // Building on the last exercise, we want all of the threads to complete their
@@ -25,6 +32,7 @@ fn main() {
         let handle = thread::spawn(move || {
             thread::sleep(Duration::from_millis(250));
             // TODO: You must take an action before you update a shared value
+            
             status_shared.jobs_completed += 1;
         });
         handles.push(handle);
@@ -34,6 +42,7 @@ fn main() {
         // TODO: Print the value of the JobStatus.jobs_completed. Did you notice
         // anything interesting in the output? Do you have to 'join' on all the
         // handles?
-        println!("jobs completed {}", ???);
+        
+        println!("jobs completed {}", status.jobs_completed);
     }
 }

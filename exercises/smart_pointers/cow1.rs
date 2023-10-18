@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-18 20:38:23
+ * @LastEditTime: 2023-10-18 20:47:45
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\smart_pointers\cow1.rs
+ */
 // cow1.rs
 //
 // This exercise explores the Cow, or Clone-On-Write type. Cow is a
@@ -11,8 +18,7 @@
 // TODO markers.
 //
 // Execute `rustlings hint cow1` or use the `hint` watch subcommand for a hint.
-
-// I AM NOT DONE
+ 
 
 use std::borrow::Cow;
 
@@ -49,6 +55,8 @@ mod tests {
         let mut input = Cow::from(&slice[..]);
         match abs_all(&mut input) {
             // TODO
+            Cow::Borrowed(_) => Ok(()),
+            _ => Err("Expected brrowed value")
         }
     }
 
@@ -60,7 +68,9 @@ mod tests {
         let slice = vec![0, 1, 2];
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
-            // TODO
+            Cow::Owned(_) => Ok(()),
+            _ => Err("Expected brrowed value")            
+            
         }
     }
 
@@ -72,7 +82,8 @@ mod tests {
         let slice = vec![-1, 0, 1];
         let mut input = Cow::from(slice);
         match abs_all(&mut input) {
-            // TODO
+            Cow::Owned(_) => Ok(()),
+            _ => Err("Expected brrow value")
         }
     }
 }

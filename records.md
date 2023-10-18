@@ -1,7 +1,7 @@
 <!--
  * @Author: ss
  * @Date: 2023-10-10 19:12:24
- * @LastEditTime: 2023-10-15 20:33:08
+ * @LastEditTime: 2023-10-18 21:19:02
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\records.md
 -->
@@ -457,3 +457,85 @@ format!("{:?}", (3, 4));          // => "(3, 4)"
 格式化参数：5填充 <>^对齐 .精度 #进制 eE指数 \
 
 目前基本上过完基础篇了； \
+
+
+
+# 2023-10-16
+继续阅读圣经，进入高级阶段了呜呼~ \
+闭包：可以传递给变量、函数并且可以允许捕获调用者作用域的值 \
+```rust
+let action = || {
+    println!("Hello, world!");
+};
+action();
+//显示标注
+let sum = |x:i32,y:i32| -> i32{
+    x+y
+}
+```
+能自动捕获作用域中的值  \
+三种fn特征：Fn：不可变借用、FnMut：可变借用、FnOnce：所有权 \
+TODO
+
+```rust
+fn fn_once<F>(func: F)   //func是闭包函数变量
+where
+    F: FnOnce(usize) -> bool + Copy, //代表转移所有权
+{
+    println!("{}", func(3));
+    println!("{}", func(4));
+}
+
+fn main() {
+    let x = vec![1, 2, 3];
+    fn_once(|z|{z == x.len()}) //|z|{z == x.len()}闭包
+}
+```
+FnMut是推导出的特征类型，与
+
+迭代器： \
+有next方法 所有权转移 返回option类型\
+
+Iterator是迭代器特征，实现了它才能称为迭代器，才能调用 next \
+实现IntoIterator特征 可以通过into_iter、iter、iter_mut方法转换为迭代器 \
+
+消费者适配器：转移所有权 例如sum\
+迭代适配器：返回一个新的迭代器，惰性初始化 zip map filter\
+zip:把多个迭代器合并一个，map:对每个元素进行转换，filter:过滤掉不满足条件的元素 \
+
+# 2023-10-18
+栈拷贝一般是深拷贝 \
+Box<T> 智能指针使用场景： \
+1. 数据要储存在堆上
+2. 将动态类型变为固定大小
+3. 特征对象 Box<dyn name> \
+Box<T>是一个智能指针，它指向堆上的数据，实现了Deref和Drop特征，可以自动解引用 \
+
+Deref特征： \
+实现了deref特征的类型，可以通过*解引用 \
+```rust
+impl<T> Deref for Box<T> {
+    type Target = T;
+    fn deref(&self) -> &Target{
+        &self.0
+    }
+}
+```
+Deref能连续隐式解引用 \
+三种Deref规则   \
+
+Drop特征：  \
+drop方法借用目标的可变引用  \
+
+Cell： \
+Cell类型针对的是实现Copy特征的值类型
+RefCell：\
+用于可变、不可变应用共存导致的问题 \
+RC<T> Arc<T>： \
+RC:指向底层数据的不可变的引用，仅仅复制了智能指针并增加了引用计数 \
+Arc：原子化的Rc<T>智能指针，多线程 可以安全的在线程间共享 \
+Rc 和 RefCell 又可以变了 \ 
+多线程： \
+move：转移所有权 \
+线程结束：线程的代码执行完，线程就会自动结束,线程执行不完，一种是类似循环IO读取 一种是线程是循环 \
+barrier：多个线程都执行到某个点后，才继续一起往后执行

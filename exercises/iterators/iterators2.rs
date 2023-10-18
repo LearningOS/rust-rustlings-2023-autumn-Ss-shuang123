@@ -1,7 +1,7 @@
 /*
  * @Author: ss
  * @Date: 2023-10-15 20:09:49
- * @LastEditTime: 2023-10-15 20:31:13
+ * @LastEditTime: 2023-10-17 09:40:02
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\iterators\iterators2.rs
  */
@@ -12,9 +12,7 @@
 //
 // Execute `rustlings hint iterators2` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
-
+ 
 // Step 1.
 // Complete the `capitalize_first` function.
 // "hello" -> "Hello"
@@ -32,11 +30,7 @@ pub fn capitalize_first(input: &str) -> String {
 // Return a vector of strings.
 // ["hello", "world"] -> ["Hello", "World"]
 pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
-    let mut v: Vec<String> = Vec::new();
-    for item in words{
-        
-    }
-    v
+    words.iter().map(|word| capitalize_first(word)).collect()
     
 }
 
@@ -45,7 +39,7 @@ pub fn capitalize_words_vector(words: &[&str]) -> Vec<String> {
 // Return a single string.
 // ["hello", " ", "world"] -> "Hello World"
 pub fn capitalize_words_string(words: &[&str]) -> String {
-    String::new()
+    capitalize_words_vector(words).connect("")
 }
 
 #[cfg(test)]
