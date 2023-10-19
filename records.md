@@ -1,7 +1,7 @@
 <!--
  * @Author: ss
  * @Date: 2023-10-10 19:12:24
- * @LastEditTime: 2023-10-18 21:19:02
+ * @LastEditTime: 2023-10-19 19:52:17
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\records.md
 -->
@@ -539,3 +539,53 @@ Rc 和 RefCell 又可以变了 \
 move：转移所有权 \
 线程结束：线程的代码执行完，线程就会自动结束,线程执行不完，一种是类似循环IO读取 一种是线程是循环 \
 barrier：多个线程都执行到某个点后，才继续一起往后执行
+局部变量：\
+thread_local库 \
+条件变量：控制线程的挂起和执行 std::sync::Condvar \
+std::sync::Once 只被调用一次 \
+
+
+
+
+
+# 2023-10-19
+消息传递： \
+多发送者,但接受者 std::sync::mpsc \
+创建（异步）：std::sync::mpsc::channel \
+发送：send
+接收：recv、try_recv \
+for循环接收 \
+同步创建：std::sync::mpsc::sync_channel, send参数是消息缓存 \
+
+Mutex：互斥锁 std::sync::Mutex ：\
+在使用数据前必须先获取锁 \
+在数据使用完成后，必须及时的释放锁 \
+RwLock: 读写锁 std::sync::RwLock ：\
+允许多个读，只允许一个写，读写不能同时存在 \
+通常需要对读到的资源进行"长时间"的操作 \
+
+信号量：控制当前正在运行的任务最大数量 \
+
+原子类型： \
+
+
+Macros： 宏编程 \
+vec!宏： \
+```rust
+#[macro_export]
+macro_rules! vec {
+    ( $( $x:expr ),* ) => {
+        {
+            let mut temp_vec = Vec::new();
+            $(
+                temp_vec.push($x);
+            )*
+            temp_vec
+        }
+    };
+}
+```
+
+类型转化： \
+as：强制类型转换 数值型类型\
+try_into 转化 \ 
