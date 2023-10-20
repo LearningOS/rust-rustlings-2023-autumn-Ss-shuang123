@@ -1,7 +1,7 @@
 <!--
  * @Author: ss
  * @Date: 2023-10-10 19:12:24
- * @LastEditTime: 2023-10-19 19:52:17
+ * @LastEditTime: 2023-10-20 11:38:21
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\records.md
 -->
@@ -589,3 +589,9 @@ macro_rules! vec {
 类型转化： \
 as：强制类型转换 数值型类型\
 try_into 转化 \ 
+AsRef 特性用于实现将某种类型转换为另一种类型的引用，而不是进行实际的拷贝或转移数据 \
+AsMut 是Rust中的一个trait，用于表示类型可以被视为可变引用的类型。以将一个不可变引用转换为一个可变引用，然后对目标类型进行修改
+
+# 2023-10-20
+unsafe： \
+裸指针： let address = 0x012345usize; \

@@ -1,3 +1,10 @@
+/*
+ * @Author: ss
+ * @Date: 2023-10-20 12:26:21
+ * @LastEditTime: 2023-10-20 12:26:21
+ * @Description: 
+ * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\tests\tests7.rs
+ */
 // tests7.rs
 //
 // When building packages, some dependencies can neither be imported in
@@ -33,8 +40,7 @@
 //
 // Execute `rustlings hint tests7` or use the `hint` watch subcommand for a
 // hint.
-
-// I AM NOT DONE
+ 
 
 fn main() {}
 
