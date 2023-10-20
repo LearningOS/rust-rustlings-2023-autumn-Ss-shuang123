@@ -1,7 +1,7 @@
 /*
  * @Author: ss
  * @Date: 2023-10-19 18:21:24
- * @LastEditTime: 2023-10-19 18:35:16
+ * @LastEditTime: 2023-10-20 17:13:13
  * @Description: 
  * @FilePath: \rust-rustlings-2023-autumn-Ss-shuang123\exercises\clippy\clippy3.rs
  */
@@ -15,9 +15,7 @@
 #[allow(unused_variables, unused_assignments)]
 fn main() {
     let my_option: Option<()> = Default::default();
-    if my_option.is_none() {
-        println!("{:?}",my_option.unwrap());
-    }
+    
 
     let my_arr = &[
         -1, -2, -3,
@@ -25,7 +23,8 @@ fn main() {
     ];
     println!("My array! Here it is: {:?}", my_arr);
 
-    let my_empty_vec:Vec<i32> = vec![];// = vec![1, 2, 3, 4, 5].resize(0, 5);
+    let mut my_empty_vec:Vec<i32> =  vec![1, 2, 3, 4, 5];
+    my_empty_vec.clear();
     println!("This Vec is empty, see? {:?}", my_empty_vec);
 
     let mut value_a = 45;
