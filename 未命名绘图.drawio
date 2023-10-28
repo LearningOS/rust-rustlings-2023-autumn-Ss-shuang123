@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-10-28T02:17:49.261Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" etag="KVy95u0rHqb0dKm_yuB8" version="22.0.8" type="github">
+<mxfile host="app.diagrams.net" modified="2023-10-28T02:33:02.769Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.64 Safari/537.36" etag="Y9QizSbjn6ML88iNT4fr" version="22.0.8" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="1160" dy="629" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
@@ -69,6 +69,71 @@
               <mxPoint x="399" y="659" />
               <mxPoint x="399" y="544" />
             </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-20" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="188" y="841" width="50" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-22" value="&lt;font face=&quot;Times New Roman&quot; style=&quot;font-size: 18px;&quot;&gt;方案&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="124" y="876" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pN-QBOP-44uzX3nPPjZo-23" target="pN-QBOP-44uzX3nPPjZo-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-23" value="继续目标检测" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="238" y="810" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-24" value="1. 难度大&lt;br&gt;2. 标记难" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="438" y="800" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pN-QBOP-44uzX3nPPjZo-26" target="pN-QBOP-44uzX3nPPjZo-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-26" value="传统算法" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="238" y="906" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-28" value="1. OpenCV&lt;br&gt;2. 像素级处理" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="437" y="896" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pN-QBOP-44uzX3nPPjZo-30" target="pN-QBOP-44uzX3nPPjZo-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-30" value="原始图像" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="278" y="1090" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-34" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pN-QBOP-44uzX3nPPjZo-31" target="pN-QBOP-44uzX3nPPjZo-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-31" value="中值滤波" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="278" y="1193" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-36" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pN-QBOP-44uzX3nPPjZo-33" target="pN-QBOP-44uzX3nPPjZo-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-33" value="边缘检测" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="278" y="1302" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="pN-QBOP-44uzX3nPPjZo-35" target="pN-QBOP-44uzX3nPPjZo-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-35" value="矩形框" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="278" y="1411" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-37" value="1. 框阈值&lt;br&gt;2.像素颜色阈值&lt;br&gt;3.横纵比" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="278" y="1526" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-39" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" target="pN-QBOP-44uzX3nPPjZo-35">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="398" y="1559" as="sourcePoint" />
+            <mxPoint x="448" y="1509" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="486" y="1496" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="pN-QBOP-44uzX3nPPjZo-40" value="迭代" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="pN-QBOP-44uzX3nPPjZo-39">
+          <mxGeometry x="0.489" relative="1" as="geometry">
+            <mxPoint y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
